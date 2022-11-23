@@ -2,43 +2,42 @@
 
 main(){
 	
-	float amt;
-	float unit;
-	float surcharge;
-	float total_bill;
+	float amt, surcharge, totalbill;
 	
-	printf("type Unit :- ");
+	int unit;
 	
-	scanf("%f",&unit);
+	printf("Enter bill amt: ");
+	scanf ("%d", &unit);
 	
 	if(unit<=50){
 		
-		amt = unit*0.50;		
-		
-	}	
+				amt= unit*0.50;
+	}
 	
 	else if(unit<=150){
-		
-		amt = unit*0.75;
-		
-		}
+				
+				amt= 25+((unit-50)*0.75);
+	}
 	
-	else if(unit<=250){	
+	else if(unit<=250){
 		
-		amt = unit*1.20;
+				amt= 100+ ((unit-150)*1.20);
+	}
+	
+	else if(unit>250){
 		
-		}
+				amt= 220 + ((unit-250)*1.50);
+	}
 	
-	else{
-
-		amt = unit*1.50;
-		
-		}
+	surcharge= amt*0.20;
 	
-	surcharge = amt*0.2;
+	totalbill = amt + surcharge;
 	
-	total_bill = amt+surcharge;
+	printf("Total E Bill is %0.2f", totalbill);
 	
-	printf("Total Bill %.2f",total_bill);	
+	
+	
+	
+	
 	
 }
